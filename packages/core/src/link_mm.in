@@ -11,8 +11,6 @@ InitDmaManager = 0x80080d0c;
 Play_Init = 0x8016a2c8;
 gSaveContext = 0x801ef670;
 DMARomToRam = 0x80080790;
-Camera_GetCamDir = 0x800DFC90;
-SkelAnime_DrawOpa = 0x80133b3c;
 
 EffectSs_Delete = 0x800b0210;
 gEffectSsTable = 0x801ae3a0;
@@ -31,7 +29,6 @@ Environment_NewDay = 0x800feaf4;
 Play_DrawHudButtons = 0x80117100;
 Audio_GetActiveSeqId = 0x801a8a50;
 Audio_QueueSeqCmd = 0x801a89a8;
-func_8012CF0C = 0x8012cf0c;
 
 Actor_ProcessInitChain = 0x800ffadc;
 
@@ -46,7 +43,6 @@ ActorRemove = 0x800BB498;
 AddMagic = 0x80115d14;
 Magic_RequestChange = 0x80115db4;
 Magic_Reset = 0x80115D5C;
-Interface_SetBButtonInterfaceDoAction = 0x80115844;
 Health_ChangeBy = 0x80115908;
 GetRoomClearFlag = 0x800b5cc4;
 
@@ -75,6 +71,7 @@ osFlashReadArray = 0x8018752c;
 SysFlashrom_IsInit = 0x801857c0;
 SysFlashrom_InitFlash = 0x80185908;
 SysFlashrom_ReadData = 0x80185968;
+SysFlashrom_EraseSector = 0x801859F0;
 SysFlashrom_ExecWrite = 0x80185a2c;
 
 gCartHandle = 0x80096b40;
@@ -92,9 +89,6 @@ AudioLoad_InitTable = 0x8018f478;
 PictoUpdateFlags = 0x8013a240;
 gPictoboxState = 0x801bf884;
 gPictoboxPhotoTaken = 0x801bf888;
-
-sMsgScriptCmdHandlers = 0x801bf5c0;
-sMsgScriptCmdSizes = 0x801bf68c;
 
 SpawnRoomActors = 0x800bb140;
 
@@ -139,6 +133,7 @@ Gfx_SetupDL57 = 0x8012BFC4;
 Gfx_SetupDL25_Opa = 0x8012c28c;
 Gfx_SetupDL25_Xlu = 0x8012c2dc;
 Gfx_SetupDL_42Opa = 0x8012c8ac;
+GetMatrixMV     = 0x80181a40;
 Matrix_Put      = 0x8018020c;
 DisplaceTexture = 0x8012cbd0;
 Gfx_SetupDL = 0x8012BF78;
@@ -248,7 +243,6 @@ ClearSwitchFlag = 0x800b5c34;
 GetItemCollectBehavior = 0x801143cc;
 RemoveItem = 0x801149a0;
 
-Interface_SetDoAction = 0x8011552c;
 Interface_StartMoonCrash = 0x8011c808;
 
 Play_SetRespawnData = 0x80169dcc;
@@ -264,12 +258,10 @@ Message_ShouldAdvance = 0x80147624;
 Interface_LoadItemIconImpl = 0x80112b40;
 UpdateEquipment = 0x80123c90;
 
-Play_Main = 0x80168f64;
-Play_DrawMain = 0x80168090;
+Play_Update = 0x80168f64;
 
 Gfx_TexScroll = 0x8012cb4c;
 
-Sram_ClearFlagsAtDawnOfTheFirstDay = 0x80143ac4;
 Player_Update = 0x80160b80;
 LoadIcon = 0x80178e3c;
 CmpDma_LoadAllFiles = 0x80178E7C;
@@ -290,18 +282,19 @@ Actor_RunByteCode = 0x8010bf58;
 
 DrawDungeonUnk2 = 0x801091f0;
 
+gGameData = 0x801f3f60;
+
 Gfx_DrawDListOpa = 0x800bdfc0;
 
 Actor_UpdateBgCheckInfo = 0x800b78b8;
 
-Matrix_Push = 0x8018019c;
-Matrix_Pop = 0x801801cc;
+MatrixStackDup = 0x8018019c;
+MatrixStackPop = 0x801801cc;
 
 _AddRupees = 0x801159ec;
 
 PlayStoreFlags = 0x80169d40;
 Play_GetCamera = 0x801696d4;
-DeathWarp = 0x80169f78;
 Play_CamIsNotFixed = 0x80169FFC;
 
 gPlayedOcarinaSong = 0x801d8528;
@@ -349,19 +342,8 @@ BgCheck_EntityRaycastDown4 = 0x800c411c;
 
 DynaPoly_DisableCollision = 0x800c62bc;
 
-func_800B1210 = 0x800b1210;
 Actor_PlaySfx_Flagged = 0x800B9010;
 CutsceneManager_GetCutsceneScriptIndex = 0x800f2138;
-
-Actor_HeightDiff = 0x800B6F0C;
-Lights_BindAll = 0x801022F0;
-Lights_Draw = 0x80101BC8;
-LightContext_NewLights = 0x80102580;
-SkinMatrix_Vec3fMtxFMultXYZW = 0x80138ba0;
-WaterBox_GetSurfaceImpl = 0x800c9ebc;
-
-Actor_UpdatePos = 0x800B69AC;
-Actor_OfferCarry = 0x800B8BB0;
 
 Item_CollectibleDropTable = 0x800a8150;
 Item_CollectibleDropTable2 = 0x800a817c;
@@ -374,7 +356,6 @@ EnableOwl = 0x80143a10;
 Math_Vec3f_Copy = 0x800FF50C;
 Math_Vec3f_Diff = 0x800FF5F4;
 Math_Vec3f_DistXYZAndStoreDiff = 0x800FF8D4;
-Math_Vec3f_DistXYZ = 0x800ff884;
 VectDist = 0x800ff92c;
 
 sqrtf = 0x8008D700;
@@ -393,11 +374,9 @@ Math_Vec3f_Pitch = 0x800ffa94;
 EffectSsDust_Spawn_2_Normal = 0x800b0f80;
 
 Audio_PlaySfx_AtPosWithAllChannelsIO = 0x801a0868;
-SkelAnime_Init = 0x80136A7C;
 SkelAnime_Update = 0x80136cd0;
 SkelAnime_InitFlex = 0x80136b30;
 Animation_Change = 0x801373e8;
-Math3D_Dist2DSq = 0x8017A634;
 
 Player_SetCsActionWithHaltedActors = 0x800b7298;
 Actor_TalkOfferAccepted = 0x800b84d0;
@@ -555,10 +534,6 @@ SoundSource_PlaySfxAtFixedWorldPos = 0x800f0568;
 Enemy_StartFinishingBlow = 0x800bba88;
 Cutscene_StartManual = 0x800ea0d4;
 Cutscene_StopManual = 0x800ea0ec;
-Actor_Noop = 0x800bdfb0;
-Math3D_Dist1DSq = 0x8017a5f8;
-kLinkHumanShieldsDLs = 0x801c00ac;
-Player_PostLimbDrawGameplay = 0x80128bd0;
 
 CutsceneManager_GetAdditionalCsId = 0x800f20b8;
 func_800B4AEC = 0x800b4aec;
@@ -572,7 +547,6 @@ Gfx_SetupDL72 = 0x8012c304;
 Scene_SetRenderModeXlu = 0x80131df0;
 Player_GetMask = 0x8012403c;
 SkelAnime_DrawFlex = 0x80134dbc;
-AnimatedMat_Draw = 0x80131758;
 
 Actor_TextboxIsClosing = 0x800b867c;
 func_800B0E48 = 0x800b0e48;
@@ -603,92 +577,3 @@ func_800AE930 = 0x800ae930;
 Effect_GetByIndex = 0x800af720;
 func_800AEF44 = 0x800aef44;
 CollisionCheck_SetInfo = 0x800e7530;
-
-SurfaceType_IsIgnoredByEntities = 0x800c9d14;
-func_800B90AC = 0x800B90AC;
-Actor_SetPlayerImpact = 0x800b648c;
-SurfaceType_GetMaterial = 0x800c9bb8;
-CollisionCheck_SpawnShieldParticlesWood = 0x800e86e0;
-BgCheck_EntityLineTest2 = 0x800c5650;
-EffectSsBlast_SpawnWhiteShockwave = 0x800b1b10;
-
-Matrix_MultVecY = 0x80181bc4;
-func_800B12F0 = 0x800b12f0;
-WaterBox_GetSurface1 = 0x800ca1ac;
-Actor_WorldYawTowardActor = 0x800b6cd4;
-Rumble_Request = 0x8013ece0;
-func_800B0DE0 = 0x800b0de0;
-Matrix_Finalize = 0x80181a40;
-Flags_GetClear = 0x800b5cc4;
-Actor_SpawnIceEffects = 0x800bf7cc;
-Math_FAcosF = 0x80086c48;
-Player_SetCsAction = 0x800b724c;
-Animation_PlayOnce = 0x80137430;
-func_800BC270 = 0x800bc270;
-Actor_WorldPitchTowardPoint = 0x800b6da8;
-Math_SinF = 0x801794ec;
-Flags_SetClearTemp = 0x800b5d30;
-EffectSsHahen_Spawn = 0x800b219c;
-CutsceneManager_GetCurrentSubCamId = 0x800F21B8;
-Audio_PlayBgm_StorePrevBgm = 0x801a2e54;
-func_800BE5CC = 0x800be5cc;
-Quake_RemoveRequest = 0x8012aac0;
-Actor_ApplyDamage = 0x800be22c;
-Audio_RestorePrevBgm = 0x801a2ed8;
-Actor_MoveWithoutGravity = 0x800b6b24;
-Actor_WorldYawTowardActor = 0x800b6cd4;
-Actor_WorldYawTowardPoint = 0x800b6d2c;
-BgCheck_EntityLineTest1 = 0x800c55c4;
-Actor_WorldDistXZToActor = 0x800b6e1c;
-
-Play_EnableMotionBlur = 0x8016566c;
-Play_SetCameraFov = 0x80169940;
-Play_DisableMotionBlur = 0x80165690;
-
-Matrix_Pop = 0x801801cc;
-Matrix_Push = 0x8018019c;
-
-Math_Vec3s_Copy = 0x800ff52c;
-func_800BBFB0 = 0x800bbfb0;
-
-Collider_InitAndSetTris = 0x800e1a24;
-Collider_InitAndSetQuad = 0x800e1f88;
-Collider_DestroyTris = 0x800e17b4;
-Collider_DestroyQuad = 0x800e1e68;
-func_800BE184 = 0x800be184;
-Camera_AddQuake = 0x800dfd04;
-func_800BE504 = 0x800be504;
-CutsceneManager_StartWithPlayerCsAndSetFlag = 0x800f1ce0;
-Actor_SetDropFlag = 0x800be258;
-Collider_SetTrisVertices = 0x800e7ecc;
-Collider_SetQuadVertices = 0x800e7e5c;
-EffectBlure_AddVertex = 0x800a81f0;
-func_800B8050 = 0x800b8050;
-func_800B8118 = 0x800b8118;
-func_800AE5A0 = 0x800ae5a0;
-func_800BC620 = 0x800bc620;
-SoundSource_PlaySfxEachFrameAtFixedWorldPos = 0x800f0590;
-gSetupDLs = 0x801c0ef0;
-
-Actor_SetClosestSecretDistance = 0x800b8c50;
-CutsceneFlags_Get = 0x800f13e8;
-Gfx_DrawDListXlu = 0x800be03c;
-
-Audio_PlaySfx_SwordCharge = 0x8019f900;
-gSfxDefaultFreqAndVolScale = 0x801db4b0;
-gSfxDefaultReverb = 0x801db4b8;
-Matrix_Mult = 0x80180244;
-Environment_AdjustLights = 0x800fd2b4;
-LightContext_RemoveLight = 0x80102684;
-
-func_800B0F18 = 0x800b0f18;
-DynaPoly_EnableCollision = 0x800c6314;
-Collider_InitTris = 0x800e16d0;
-Collider_SetTris = 0x800e1958;
-
-Audio_SetFileSelectSettings = 0x801a3d98;
-
-gPlayerFormItemRestrictions = 0x801c2410;
-
-D_801AEFA0 = 0x801aefa0;
-D_801AEF88 = 0x801aef88;
