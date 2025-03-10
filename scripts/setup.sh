@@ -1,5 +1,5 @@
 #!/bin/sh
 
 corepack install
-./scripts/install-deps.sh
+./install-deps.sh
 pnpm install
